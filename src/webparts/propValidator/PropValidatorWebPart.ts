@@ -65,7 +65,7 @@ export default class PropValidatorWebPart extends BaseClientSideWebPart<IPropVal
       .then((response: Response) => {
         return response.json().then((responseJSON) => {
           if (responseJSON.value.toLowerCase() === value.toLowerCase()) {
-            return "Title cannot be same as the SharePoint site title";
+            return "Title cannot be the same as the SharePoint site title";
           }
           else {
             return "";
