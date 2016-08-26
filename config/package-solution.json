@@ -1,0 +1,10 @@
+{
+  "solution": {
+    "name": "property-pane-validations-client-side-solution",
+    "id": "aa2cd8c2-d3d7-422c-a9e3-130845088a56",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "property-pane-validations.spapp"
+  }
+}

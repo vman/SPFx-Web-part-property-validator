@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "62140b15-8678-4381-84dd-74ccb798ae19",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "62140b15-8678-4381-84dd-74ccb798ae19",
+    "group": { "default": "Under Development" },
+    "title": { "default": "PropValidator" },
+    "description": { "default": "PropValidator description" },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "title": "Welcome to the SharePoint Framework!",
+      "description": "Web part to test property pane validations"
+    }
+  }]
+}
