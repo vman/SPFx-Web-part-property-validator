@@ -60,26 +60,28 @@ export default class PropValidatorWebPart extends BaseClientSideWebPart<IPropVal
   }
 
   private _validateTitleAsync(value: string): Promise<string> {
-
     return this.context.httpClient.get(`${this.context.pageContext.web.absoluteUrl}/_api/web/title`)
       .then((response: Response) => {
         return response.json().then((responseJSON) => {
+          // If validation is not successful, return a Promise<string> with error message.
           if (responseJSON.value.toLowerCase() === value.toLowerCase()) {
             return "Title cannot be the same as the SharePoint site title";
           }
           else {
+            // If validation is successful, return a Promise<string> with empty string.
             return "";
           }
         });
       });
-
   }
 
   private _validateDescription(value: string): string {
+    // If validation is not successful, return a string with error message.
     if (value.length < 10) {
       return "At least 10 characters required";
     }
     else {
+      // If validation is successful, return an empty string.
       return "";
     }
   }
