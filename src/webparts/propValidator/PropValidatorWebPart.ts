@@ -60,6 +60,9 @@ export default class PropValidatorWebPart extends BaseClientSideWebPart<IPropVal
   }
 
   private _validateTitleAsync(value: string): Promise<string> {
+
+    console.log(`_validateTitleAsync function fired at ${new Date().toTimeString()}`);
+
     return this.context.httpClient.get(`${this.context.pageContext.web.absoluteUrl}/_api/web/title`)
       .then((response: Response) => {
         return response.json().then((responseJSON) => {
@@ -76,6 +79,9 @@ export default class PropValidatorWebPart extends BaseClientSideWebPart<IPropVal
   }
 
   private _validateDescription(value: string): string {
+
+    console.log(`_validateDescription function fired at ${new Date().toTimeString()}`);
+
     // If validation is not successful, return a string with error message.
     if (value.length < 10) {
       return "At least 10 characters required";
@@ -85,4 +91,8 @@ export default class PropValidatorWebPart extends BaseClientSideWebPart<IPropVal
       return "";
     }
   }
+
+  protected get disableReactivePropertyChanges(): boolean {
+		return true;
+	}
 }
